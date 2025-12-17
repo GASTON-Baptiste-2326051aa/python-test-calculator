@@ -1,0 +1,12 @@
+FROM jenkins/jenkins:lts
+
+USER root
+
+RUN apt-get update -qq \
+ && apt-get install -qqy \
+    ca-certificates \
+    curl \
+    gnupg \
+    docker.io
+
+USER jenkins
